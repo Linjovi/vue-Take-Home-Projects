@@ -1,14 +1,16 @@
 import axios from 'axios';
 // import store from '@/store';
 const instance = axios.create({
-  baseURL: process.env.BASE_URL,
+  // baseURL: process.env.BASE_URL,
   timeout: 10000
 });
 
 instance.interceptors.request.use(
   config => {
     // do something before request is sent
-    config.headers.token = 'test';
+    // config.headers.token = 'test';
+    // config.headers['Content-Type'] = 'application/json';
+    // config.headers['Access-Control-Allow-Origin']='*';
     return config;
   },
   error => {

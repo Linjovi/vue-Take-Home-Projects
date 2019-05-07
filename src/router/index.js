@@ -1,8 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import HelloWorld from '@/components/HelloWorld'
-import Weather from '@/views/weather/index'
 import Home from '@/views/Home'
+import Weather from '@/views/weather/index'
+import Wiki from '@/views/wiki/index'
 
 Vue.use(Router)
 
@@ -20,7 +21,7 @@ export default new Router({
         //   {path:'add',component:AddConsumer,name:"AddConsumer"}
         // ]
         },
-        {path:'hello',component:HelloWorld,name:"helloworld"}
+        {path:'wiki',component:Wiki,name:"wiki"}
       ]
     },
   ]

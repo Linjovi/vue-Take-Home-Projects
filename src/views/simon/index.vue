@@ -15,9 +15,16 @@
       ></el-button>
     </div>
     <div class="result" v-show="result!==0">
-      <span v-if="result===1">win</span>
-      <span v-if="result===-1">over!</span>
+      <h1 v-if="result===1">win</h1>
+      <h1 v-if="result===-1">over!</h1>
     </div>
+    <audio 
+    style="display:none" 
+    v-for="item in [1,2,3,4]" 
+    :key="item"
+    :src="'https://s3.amazonaws.com/freecodecamp/simonSound'+item+'.mp3'"
+    :id="'audio'+(item-1).toString()"></audio>
+
   </div>
 </template>
 <script>
@@ -54,6 +61,8 @@ export default {
       }
     },
     btnClick(index) {
+      let buttonAudio = document.getElementById('audio'+index.toString());
+      buttonAudio.play();
       if (index === this.order[this.current]) {
         this.current++;
       } else {

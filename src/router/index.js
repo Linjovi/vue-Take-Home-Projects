@@ -5,6 +5,7 @@ import Home from '@/views/Home'
 import Weather from '@/views/weather/index'
 import Wiki from '@/views/wiki/index'
 import Bingo from '@/views/bingo/index'
+import Simon from '@/views/simon/index'
 
 Vue.use(Router)
 
@@ -19,7 +20,8 @@ export default new Router({
       children:[
         {path:'weather',component:Weather,name:"weather"},
         {path:'wiki',component:Wiki,name:"wiki"},
-        {path:'bingo',component:Bingo,name:"bingo"}
+        {path:'bingo',component:Bingo,name:"bingo"},
+        {path:'simon',component:Simon,name:"simon"}
       ]
     },
   ]

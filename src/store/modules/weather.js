@@ -13,6 +13,9 @@ import {
     },
     actions: {
       async GetWeather({ commit }, data) {
+        // await getWeather(data,(res)=>{
+        //   commit('WeatherLoad', res);
+        // });
         const response = await getWeather(data);
         commit('WeatherLoad', response.data);
         return response.data;

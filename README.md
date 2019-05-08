@@ -1,6 +1,7 @@
 # vue-project
 
 > A Vue.js project
+> freecodecamp上的take home project 大致上实现了一下功能
 
 ## Build Setup
 

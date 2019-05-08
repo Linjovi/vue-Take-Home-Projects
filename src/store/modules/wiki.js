@@ -14,8 +14,8 @@ import {
     actions: {
       async GetWikiList({ commit }, data) {
         // const response = 
-        await getWikiList(data,(data)=>{
-          commit('WikiListLoad', data.query.pages);
+        await getWikiList(data,(res)=>{
+          commit('WikiListLoad', res.query.pages);
         });
         // commit('WikiListLoad', response.data);
         // return response.data;

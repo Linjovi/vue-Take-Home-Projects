@@ -11,12 +11,12 @@
       <button @click="reset()">reset</button>
     </header>
     <div class="game-content">
-      <button
+      <el-button
         v-for="(item,index) in situation"
         :key="index"
         @click="buttonClick(index)"
         :disabled="bingo||choose===0"
-      >{{buttonClass(item)}}</button>
+      >{{buttonClass(item)}}</el-button>
     </div>
     <div v-show="bingo" v-if="winner">{{winner}} bingo</div>
   </div>

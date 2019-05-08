@@ -15,7 +15,7 @@
       ></el-button>
     </div>
     <div class="result" v-show="result!==0">
-      <h1 v-if="result===1">win</h1>
+      <h1 v-if="result===1">you win!</h1>
       <h1 v-if="result===-1">over!</h1>
     </div>
     <audio 
@@ -67,6 +67,10 @@ export default {
         this.current++;
       } else {
         this.result = -1;
+        return;
+      }
+      if(this.count === 20){
+        this.result = 1;
         return;
       }
       if(this.current >= this.order.length){

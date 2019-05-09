@@ -13,7 +13,7 @@ import {
     },
     actions: {
       async GetWikiList({ commit }, data) {
-        // const response = 
+        // const response = await getWikiList(data);
         await getWikiList(data,(res)=>{
           commit('WikiListLoad', res.query.pages);
         });

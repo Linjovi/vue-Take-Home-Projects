@@ -1,5 +1,6 @@
 <template>
   <div class="wiki">
+    <h1>wiki search</h1>
     <el-input v-model="input"></el-input>
     <el-button @click="searchClick">search</el-button>
     <div :v-if="wikiList.length>0">
@@ -14,6 +15,7 @@
 </template>
 
 <script>
+import {getCors} from '../../api/wiki.js'
 export default {
   name: 'Wiki',
   data () {

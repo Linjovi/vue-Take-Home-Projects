@@ -1,5 +1,3 @@
-import request from '@/utils/request';
-
 
 export function getWikiList(data,callback) {
   let url = 'https://en.wikipedia.org/w/api.php?format=json&action=query&generator=search&gsrnamespace=0&gsrlimit=10&prop=pageimages|extracts&pilimit=max&exintro&explaintext&exsentences=1&exlimit=max&gsrsearch=' + data;
@@ -18,6 +16,7 @@ export function getWikiList(data,callback) {
   script.src = url + (url.indexOf('?') >= 0 ? '&' : '?') + 'callback=' + callbackName;
   document.body.appendChild(script);
 }
+
 
 
 

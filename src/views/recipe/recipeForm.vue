@@ -33,7 +33,9 @@ export default {
   },
   methods:{
     onSubmit(){
-
+      this.$store.dispatch('SaveRecipe', this.form)
+      this.$emit('visable',true);
+      // console.log(this.form)
     }
   }
 };

@@ -10,7 +10,7 @@ instance.interceptors.request.use(
   config => {
     // do something before request is sent
     if(config.method == 'post'){
-      // config.data = qs.stringify(config.data);
+      config.data = qs.stringify(config.data);
     }
     return config;
   },

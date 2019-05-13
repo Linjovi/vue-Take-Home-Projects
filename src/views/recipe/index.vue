@@ -1,6 +1,5 @@
 <template>
   <div class="recipe">
-    todo...
     <h1>recipe box</h1>
     <el-container>
       <el-aside width="200px">
@@ -44,13 +43,14 @@
       title="recipe"
       :visible.sync="dialogVisible"
       width="500px">
-      <recipe-form :form="inputRecipe"></recipe-form>
+      <recipe-form :form="inputRecipe" @visable="dialogVisible=false"></recipe-form>
     </el-dialog>
   </div>
 </template>
 
 <script>
 import RecipeForm from './recipeForm'
+import recipeFormVue from './recipeForm.vue';
 export default {
   components:{
     RecipeForm
@@ -59,8 +59,8 @@ export default {
     return {
       recipe: {
         name:"",
-        ingredients:[],
-        directions:[]
+        ingredients:"",
+        directions:""
       },
       inputRecipe:{},
       dialogVisible:false
@@ -86,8 +86,10 @@ export default {
       this.dialogVisible = true;
     },
     deleteClick(id){
-      const data = Object.assign({}, this.recipe);
-      this.$store.dispatch('SaveRecipe', data)
+      this.$store.dispatch('DelRecipe', id).then(this.recipe = {name:"",
+        ingredients:"",
+        directions:""});
+
     },
     recipeFormat(recipe){
       if(!recipe){

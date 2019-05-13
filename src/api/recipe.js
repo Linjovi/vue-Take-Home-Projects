@@ -9,12 +9,20 @@ export function getRecipeList(data) {
 }
 
 export function saveRecipe(data = {}){
-  const url = 'http://localhost:3000/api/addRecipe';
-  console.log(data);
+  const url = 'http://localhost:3000/api/saveRecipe';
   return request({
-    // headers: {'Content-Type': 'application/json'},
     url:url,
     method:"post",
+    data
+  })
+}
+
+export function delRecipe(data){
+  console.log(data);
+  const url = 'http://localhost:3000/api/delRecipe/' + data;
+  return request({
+    url:url,
+    method:"delete",
     data
   })
 }
